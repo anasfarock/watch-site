@@ -35,7 +35,7 @@ const ProductsSection = async () => {
   }
 
   return (
-    <section className="relative min-h-screen bg-gradient-to-b from-slate-950 via-slate-900 to-slate-950 overflow-hidden py-24">
+    <section className="relative min-h-screen bg-gradient-to-b from-neutral-950 via-black-900 to-white-950 overflow-hidden py-24">
       {/* Decorative background elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 left-1/4 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
@@ -46,7 +46,7 @@ const ProductsSection = async () => {
         {/* Header Section */}
         <div className="mb-16 text-center">
           <div className="inline-block mb-4">
-            <span className="px-4 py-2 bg-gradient-to-r from-blue-500 to-indigo-600 text-white text-sm font-semibold rounded-full">
+            <span className="px-4 py-2 bg-primary from-blue-500 to-indigo-600 text-black text-lg font-semibold rounded-full">
               EXPLORE OUR COLLECTION
             </span>
           </div>
@@ -61,7 +61,7 @@ const ProductsSection = async () => {
           {products.length > 0 ? (
             products.map((product: any) => (
               <div key={product.id} className="group h-full">
-                <div className="relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl overflow-hidden h-full transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 border border-slate-700/50 hover:border-blue-500/30 backdrop-blur-sm flex flex-col">
+                <div className="relative bg-neutral from-slate-800 to-slate-900 rounded-2xl overflow-hidden h-full transition-all duration-500 hover:shadow-2xl hover:shadow-blue-500/20 border border-slate-700/50 hover:border-blue-500/30 backdrop-blur-sm flex flex-col">
                   {/* Hover glow effect */}
                   <div className="absolute inset-0 bg-gradient-to-t from-blue-500/0 via-transparent to-transparent opacity-0 group-hover:opacity-20 transition-opacity duration-500"></div>
                   
@@ -71,10 +71,10 @@ const ProductsSection = async () => {
                   </div>
                   
                   {/* View Details Button */}
-                  <Link href={`/product/${product?.slug}`} className="w-full group/btn relative overflow-hidden bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold py-3 px-6 transition-all duration-300 transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl">
+                  <button className="w-full group/btn relative overflow-hidden bg-primary from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-black font-semibold py-3 px-6 transition-all duration-300 transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl">
                     <span className="relative z-10">View Details</span>
                     <i className="pi pi-arrow-right text-sm transition-transform group-hover/btn:translate-x-1"></i>
-                  </Link>
+                  </button>
                 </div>
               </div>
             ))
@@ -94,7 +94,7 @@ const ProductsSection = async () => {
         {/* Call to Action */}
         {products.length > 0 && (
           <div className="mt-16 text-center">
-            <button className="inline-flex items-center gap-2 px-8 py-4 bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-xl hover:shadow-2xl hover:shadow-blue-500/30">
+            <button className="inline-flex items-center gap-2 px-8 py-4 bg-primary from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-black font-semibold rounded-xl transition-all duration-300 transform hover:scale-105 active:scale-95 shadow-xl hover:shadow-2xl hover:shadow-blue-500/30">
               View All Products
               <i className="pi pi-arrow-right"></i>
             </button>
