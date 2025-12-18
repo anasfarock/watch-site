@@ -54,19 +54,19 @@ const ProductItem = ({
         <p
           className={
             color === "black"
-              ? "text-lg font-bold text-black"
-              : "text-lg font-bold text-white"
+              ? "text-lg font-bold text-gray-500"
+              : "text-lg font-bold text-gray-300"
           }
         >
           ${product.price}
         </p>
 
-        <Link
+        {/* <Link
           href={`/product/${product?.slug}`}
           className="block w-full py-3 px-4 text-center uppercase bg-white text-blue-600 font-bold border border-gray-300 hover:bg-blue-600 hover:text-white transition-all duration-300"
         >
           View Product
-        </Link>
+        </Link> */}
       </div>
     </div>
   );

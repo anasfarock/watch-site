@@ -9,6 +9,7 @@
 // *********************
 
 import React from "react";
+import Link from "next/link";
 import ProductItem from "./ProductItem";
 import Heading from "./Heading";
 import apiClient from "@/lib/api";
@@ -69,11 +70,11 @@ const ProductsSection = async () => {
                     <ProductItem product={product} color="white" />
                   </div>
                   
-                  {/* View Details Button
-                  <button className="w-full group/btn relative overflow-hidden bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold py-3 px-6 transition-all duration-300 transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl">
+                  {/* View Details Button */}
+                  <Link href={`/product/${product?.slug}`} className="w-full group/btn relative overflow-hidden bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-semibold py-3 px-6 transition-all duration-300 transform hover:scale-105 active:scale-95 flex items-center justify-center gap-2 shadow-lg hover:shadow-xl">
                     <span className="relative z-10">View Details</span>
                     <i className="pi pi-arrow-right text-sm transition-transform group-hover/btn:translate-x-1"></i>
-                  </button> */}
+                  </Link>
                 </div>
               </div>
             ))
