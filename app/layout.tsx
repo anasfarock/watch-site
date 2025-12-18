@@ -8,6 +8,9 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import Providers from "@/Providers";
 import SessionTimeoutWrapper from "@/components/SessionTimeoutWrapper";
+import { PrimeReactProvider } from "primereact/api";
+import "primereact/resources/themes/lara-light-indigo/theme.css";
+import "primeicons/primeicons.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -25,14 +28,16 @@ export default async function RootLayout({
   return (
     <html lang="en" data-theme="light">
       <body className={inter.className}>
-        <SessionProvider session={session}>
-          <SessionTimeoutWrapper />
-          <Header />
-          <Providers>
-            {children}
-          </Providers>
-          <Footer />
-        </SessionProvider>
+        <PrimeReactProvider>
+          <SessionProvider session={session}>
+            <SessionTimeoutWrapper />
+            <Header />
+            <Providers>
+              {children}
+            </Providers>
+            <Footer />
+          </SessionProvider>
+        </PrimeReactProvider>
       </body>
     </html>
   );

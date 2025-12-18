@@ -2,7 +2,7 @@
 
 import React, { useState, useRef, useEffect } from 'react';
 import Link from 'next/link';
-import { FaBell } from 'react-icons/fa6';
+
 import { useUnreadCount } from '@/hooks/useNotifications';
 import { useSession } from 'next-auth/react';
 
@@ -41,7 +41,7 @@ const NotificationBell: React.FC<NotificationBellProps> = ({ className = "" }) =
         className="relative p-2 text-gray-600 hover:text-gray-800 hover:bg-gray-100 rounded-full transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-1"
         aria-label={`Notifications ${unreadCount > 0 ? `(${unreadCount} unread)` : ''}`}
       >
-        <FaBell className="w-6 h-6" />
+        <i className="pi pi-bell w-6 h-6" />
         
         {/* Unread Count Badge */}
         {unreadCount > 0 && (
@@ -93,7 +93,7 @@ const NotificationBell: React.FC<NotificationBellProps> = ({ className = "" }) =
           <div className="max-h-64 overflow-y-auto">
             {unreadCount === 0 ? (
               <div className="p-6 text-center">
-                <FaBell className="w-12 h-12 mx-auto text-gray-300 mb-3" />
+                <i className="pi pi-bell w-12 h-12 mx-auto text-gray-300 mb-3" />
                 <p className="text-gray-500 text-sm">No new notifications</p>
                 <p className="text-gray-400 text-xs mt-1">You're all caught up!</p>
               </div>

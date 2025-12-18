@@ -15,7 +15,7 @@ import HeaderTop from "./HeaderTop";
 import Image from "next/image";
 import SearchInput from "./SearchInput";
 import Link from "next/link";
-import { FaBell } from "react-icons/fa6";
+
 
 import CartElement from "./CartElement";
 import NotificationBell from "./NotificationBell";
