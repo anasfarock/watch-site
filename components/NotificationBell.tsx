@@ -38,14 +38,14 @@ const NotificationBell: React.FC<NotificationBellProps> = ({ className = "" }) =
       {/* Notification Bell Button */}
       <button
         onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-        className="relative p-2 text-gray-600 hover:text-gray-800 hover:bg-gray-100 rounded-full transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-1"
+        className="relative p-2 text-base-content rounded-full transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-1"
         aria-label={`Notifications ${unreadCount > 0 ? `(${unreadCount} unread)` : ''}`}
       >
         <i className="pi pi-bell w-6 h-6" />
         
         {/* Unread Count Badge */}
         {unreadCount > 0 && (
-          <span className="absolute -top-1 -right-1 flex items-center justify-center w-5 h-5 text-xs font-bold text-white bg-red-500 rounded-full animate-pulse">
+          <span className="absolute -top-1 -right-1 flex items-center justify-center w-5 h-5 text-xs font-bold text-white bg-error rounded-full animate-pulse">
             {unreadCount > 99 ? '99+' : unreadCount}
           </span>
         )}
@@ -53,12 +53,12 @@ const NotificationBell: React.FC<NotificationBellProps> = ({ className = "" }) =
 
       {/* Dropdown Menu */}
       {isDropdownOpen && (
-        <div className="absolute right-0 top-full mt-2 w-80 bg-white border border-gray-200 rounded-lg shadow-lg z-50">
+        <div className="absolute right-0 top-full mt-2 w-80 bg-base-100 border border-base-300 rounded-lg shadow-lg z-50">
           {/* Header */}
-          <div className="flex items-center justify-between p-4 border-b border-gray-200">
-            <h3 className="text-lg font-semibold text-gray-900">Notifications</h3>
+          <div className="flex items-center justify-between p-4 border-b border-base-300">
+            <h3 className="text-lg font-semibold text-base-content">Notifications</h3>
             {unreadCount > 0 && (
-              <span className="text-sm text-gray-500">
+              <span className="text-sm text-base-content">
                 {unreadCount} unread
               </span>
             )}
@@ -70,14 +70,14 @@ const NotificationBell: React.FC<NotificationBellProps> = ({ className = "" }) =
               <Link
                 href="/notifications"
                 onClick={() => setIsDropdownOpen(false)}
-                className="flex-1 px-3 py-2 text-sm font-medium text-center text-blue-600 bg-blue-50 border border-blue-200 rounded-md hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-1 transition-colors"
+                className="flex-1 px-3 py-2 text-sm font-medium text-center text-primary bg-primary-focus border border-primary rounded-md hover:bg-primary-focus focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-1 transition-colors"
               >
                 View All
               </Link>
               
               {unreadCount > 0 && (
                 <button
-                  className="flex-1 px-3 py-2 text-sm font-medium text-center text-gray-600 bg-gray-50 border border-gray-200 rounded-md hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-1 transition-colors"
+                  className="flex-1 px-3 py-2 text-sm font-medium text-center text-base-content bg-base-200 border border-base-300 rounded-md hover:bg-base-300 focus:outline-none focus:ring-2 focus:ring-neutral focus:ring-offset-1 transition-colors"
                   onClick={() => {
                     // TODO: Implement mark all as read functionality
                     setIsDropdownOpen(false);
@@ -93,20 +93,20 @@ const NotificationBell: React.FC<NotificationBellProps> = ({ className = "" }) =
           <div className="max-h-64 overflow-y-auto">
             {unreadCount === 0 ? (
               <div className="p-6 text-center">
-                <i className="pi pi-bell w-12 h-12 mx-auto text-gray-300 mb-3" />
-                <p className="text-gray-500 text-sm">No new notifications</p>
-                <p className="text-gray-400 text-xs mt-1">You're all caught up!</p>
+                <i className="pi pi-bell w-12 h-12 mx-auto text-base-content mb-3" />
+                <p className="text-base-content text-sm">No new notifications</p>
+                <p className="text-base-content text-xs mt-1">You're all caught up!</p>
               </div>
             ) : (
               <div className="p-4 space-y-3">
                 <div className="text-center">
-                  <p className="text-sm text-gray-600 mb-2">
+                  <p className="text-sm text-base-content mb-2">
                     You have {unreadCount} unread notification{unreadCount !== 1 ? 's' : ''}
                   </p>
                   <Link
                     href="/notifications"
                     onClick={() => setIsDropdownOpen(false)}
-                    className="inline-flex items-center px-3 py-1 text-xs font-medium text-blue-600 bg-blue-50 border border-blue-200 rounded-full hover:bg-blue-100 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-1 transition-colors"
+                    className="inline-flex items-center px-3 py-1 text-xs font-medium text-primary bg-primary-focus border border-primary rounded-full hover:bg-primary-focus focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-1 transition-colors"
                   >
                     View in Notification Center →
                   </Link>
@@ -116,11 +116,11 @@ const NotificationBell: React.FC<NotificationBellProps> = ({ className = "" }) =
           </div>
 
           {/* Footer */}
-          <div className="p-3 bg-gray-50 border-t border-gray-200">
+          <div className="p-3 bg-base-200 border-t border-base-300">
             <Link
               href="/notifications"
               onClick={() => setIsDropdownOpen(false)}
-              className="block w-full text-center text-sm text-gray-600 hover:text-blue-600 transition-colors"
+              className="block w-full text-center text-sm text-base-content hover:text-primary transition-colors"
             >
               Go to Notification Center
             </Link>

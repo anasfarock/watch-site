@@ -14,7 +14,7 @@ import React from "react";
 
 const Footer = () => {
   return (
-    <footer className="bg-white" aria-labelledby="footer-heading">
+    <footer className="bg-base-100" aria-labelledby="footer-heading">
       <div>
         <h2 id="footer-heading" className="sr-only">
           Footer
@@ -31,7 +31,7 @@ const Footer = () => {
             <div className="mt-16 grid grid-cols-2 gap-8 xl:col-span-2 xl:mt-0">
               <div className="md:grid md:grid-cols-2 md:gap-8">
                 <div>
-                  <h3 className="text-lg font-bold leading-6 text-blue-600">
+                  <h3 className="text-lg font-bold leading-6 text-primary">
                     Sale
                   </h3>
                   <ul role="list" className="mt-6 space-y-4">
@@ -39,7 +39,7 @@ const Footer = () => {
                       <li key={item.name}>
                         <a
                           href={item.href}
-                          className="text-sm leading-6 text-black hover:text-gray-700"
+                          className="text-sm leading-6 text-base-content hover:text-primary"
                         >
                           {item.name}
                         </a>
@@ -48,7 +48,7 @@ const Footer = () => {
                   </ul>
                 </div>
                 <div className="mt-10 md:mt-0">
-                  <h3 className="text-base font-bold leading-6 text-blue-600">
+                  <h3 className="text-base font-bold leading-6 text-primary">
                     About Us
                   </h3>
                   <ul role="list" className="mt-6 space-y-4">
@@ -56,7 +56,7 @@ const Footer = () => {
                       <li key={item.name}>
                         <a
                           href={item.href}
-                          className="text-sm leading-6 text-black hover:text-gray-700"
+                          className="text-sm leading-6 text-base-content hover:text-primary"
                         >
                           {item.name}
                         </a>
@@ -67,7 +67,7 @@ const Footer = () => {
               </div>
               <div className="md:grid md:grid-cols-2 md:gap-8">
                 <div>
-                  <h3 className="text-base font-bold leading-6 text-blue-600">
+                  <h3 className="text-base font-bold leading-6 text-primary">
                     Buying
                   </h3>
                   <ul role="list" className="mt-6 space-y-4">
@@ -75,7 +75,7 @@ const Footer = () => {
                       <li key={item.name}>
                         <a
                           href={item.href}
-                          className="text-sm leading-6 text-black hover:text-gray-700"
+                          className="text-sm leading-6 text-base-content hover:text-primary"
                         >
                           {item.name}
                         </a>
@@ -84,7 +84,7 @@ const Footer = () => {
                   </ul>
                 </div>
                 <div className="mt-10 md:mt-0">
-                  <h3 className="text-base font-bold leading-6 text-blue-600">
+                  <h3 className="text-base font-bold leading-6 text-primary">
                     Support
                   </h3>
                   <ul role="list" className="mt-6 space-y-4">
@@ -92,7 +92,7 @@ const Footer = () => {
                       <li key={item.name}>
                         <a
                           href={item.href}
-                          className="text-sm leading-6 text-black hover:text-gray-700"
+                          className="text-sm leading-6 text-base-content hover:text-primary"
                         >
                           {item.name}
                         </a>

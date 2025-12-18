@@ -9,7 +9,7 @@ import Footer from "@/components/Footer";
 import Providers from "@/Providers";
 import SessionTimeoutWrapper from "@/components/SessionTimeoutWrapper";
 import { PrimeReactProvider } from "primereact/api";
-import "primereact/resources/themes/lara-light-indigo/theme.css";
+import "primereact/resources/themes/arya-orange/theme.css";
 import "primeicons/primeicons.css";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -26,7 +26,7 @@ export default async function RootLayout({
 }>) {
   const session = await getServerSession();
   return (
-    <html lang="en" data-theme="light">
+    <html lang="en" data-theme="luxury-dark">
       <body className={inter.className}>
         <PrimeReactProvider>
           <SessionProvider session={session}>
