@@ -1,49 +1,31 @@
-// *********************
-// Role of the component: Classical hero component on home page
-// Name of the component: Hero.tsx
-// Developer: Aleksandar Kuzmanovic
-// Version: 1.0
-// Component call: <Hero />
-// Input parameters: no input parameters
-// Output: Classical hero component with two columns on desktop and one column on smaller devices
-// *********************
-
-import Image from "next/image";
-import React from "react";
-
-const Hero = () => {
+export default function Hero() {
   return (
-    <div className="h-[700px] w-full bg-blue-500 max-lg:h-[900px] max-md:h-[750px]">
-      <div className="grid grid-cols-3 items-center justify-items-center px-10 gap-x-10 max-w-screen-2xl mx-auto h-full max-lg:grid-cols-1 max-lg:py-10 max-lg:gap-y-10">
-        <div className="flex flex-col gap-y-5 max-lg:order-last col-span-2">
-          <h1 className="text-6xl text-white font-bold mb-3 max-xl:text-5xl max-md:text-4xl max-sm:text-3xl">
-            THE PRODUCT OF THE FUTURE
-          </h1>
-          <p className="text-white max-sm:text-sm">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor modi
-            iure laudantium necessitatibus ab, voluptates vitae ullam. Officia
-            ipsam iusto beatae nesciunt, consequatur deserunt minima maiores
-            earum obcaecati. Optio, nam!
-          </p>
-          <div className="flex gap-x-1 max-lg:flex-col max-lg:gap-y-1">
-            <button className="bg-white text-blue-600 font-bold px-12 py-3 max-lg:text-xl max-sm:text-lg hover:bg-gray-100">
-              BUY NOW
-            </button>
-            <button className="bg-white text-blue-600 font-bold px-12 py-3 max-lg:text-xl max-sm:text-lg hover:bg-gray-100">
-              LEARN MORE
-            </button>
-          </div>
-        </div>
-        <Image
-          src="/watch for banner.png"
-          width={400}
-          height={400}
-          alt="smart watch"
-          className="max-md:w-[300px] max-md:h-[300px] max-sm:h-[250px] max-sm:w-[250px] w-auto h-auto"
-        />
+    <div className="relative w-full h-screen overflow-hidden">
+      {/* Video Background */}
+      <video
+        autoPlay
+        muted
+        loop
+        className="absolute inset-0 w-full h-full object-cover"
+      >
+        <source src="/hero.mp4" type="video/mp4" />
+      </video>
+
+      {/* Black Overlay - 50% opacity */}
+      <div className="absolute inset-0 bg-black opacity-50"></div>
+
+      {/* Content */}
+      <div className="relative z-10 h-full flex flex-col items-center justify-center gap-8">
+        {/* Heading */}
+        <h1 className="text-6xl font-bold text-white text-center px-4">
+          Explore our Watches
+        </h1>
+
+        {/* Button */}
+        <button className="px-8 py-3 border-2 border-white text-white font-semibold text-lg hover:bg-white hover:text-black transition-all duration-300">
+          Explore
+        </button>
       </div>
     </div>
   );
-};
-
-export default Hero;
+}
